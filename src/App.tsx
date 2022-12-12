@@ -1,14 +1,18 @@
-import MultiCheckbox from "./components/checkbox/MultiCheckbox";
-import Parent from "./components/container/Parent";
+import PageHome from "./pages";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PageMultiCheckbox from "./pages/multi-checkbox";
+import PageModalBottomSlide from "./pages/modal-bottom-slide";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <MultiCheckbox />
-      <Parent />
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageHome />} />
+        <Route path="/checkbox" element={<PageMultiCheckbox />} />
+        <Route path="/modal-bottom-slide" element={<PageModalBottomSlide />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
